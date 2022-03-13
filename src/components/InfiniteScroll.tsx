@@ -13,7 +13,7 @@ interface InfiniteScrollProps {
   setData: Dispatch<SetStateAction<Array<object>>>;
 }
 
-const InfiniteScroll = ({
+function InfiniteScroll({
   page,
   setPage,
   pageCount,
@@ -25,7 +25,7 @@ const InfiniteScroll = ({
   className,
   setData,
   ...props
-}: InfiniteScrollProps) => {
+}: InfiniteScrollProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const loadMoreCallback = useCallback(async (nextPage) => {

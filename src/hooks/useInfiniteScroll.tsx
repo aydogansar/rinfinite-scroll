@@ -7,7 +7,7 @@ interface InfiniteScrollProps {
     loadMore: (page: number, search?: string) => void;
 }
 
-const useInfiniteScroll = ({ initialData = [], initialPage = 1, initialSearch = "", loadMore = () => { } }: InfiniteScrollProps) => {
+function useInfiniteScroll({ initialData = [], initialPage = 1, initialSearch = "", loadMore = () => { } }: InfiniteScrollProps) {
     const [data, setData] = useState(initialData)
     const [page, setPage] = useState(initialPage)
     const [search, setSearch] = useState(initialSearch)
