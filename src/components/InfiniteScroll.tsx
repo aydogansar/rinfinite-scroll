@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback, ReactNode, Dispatch, SetStateAction, DOMElement, ReactDOM } from "react";
+import React, { useEffect, useRef, useCallback, ReactNode, Dispatch, SetStateAction } from "react";
 
 interface InfiniteScrollProps {
   page: number;
