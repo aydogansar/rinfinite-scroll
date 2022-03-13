@@ -14,11 +14,10 @@ function useInfiniteScroll({ initialData = [], initialPage = 1, initialSearch = 
 
     const onSearch = useCallback(async () => {
         const res: any = await loadMore(1, search)
-        const json = await res.json();
 
         setPage(1)
 
-        setData(json)
+        setData(res)
     }, [search])
 
 

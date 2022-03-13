@@ -32,11 +32,9 @@ function InfiniteScroll({
     if (page < nextPage) {
       const res: any = await loadMore(nextPage)
 
-      const json = await res.json();
-
       setPage(nextPage)
 
-      setData((p) => [...p, ...json]);
+      setData((p) => [...p, ...res]);
     }
   }, [page])
 
