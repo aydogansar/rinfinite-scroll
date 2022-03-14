@@ -18,11 +18,11 @@ import InfiniteScroll, { useInfiniteScroll } from "rinfinite-scroll"
     setPage={setPage}
     pageCount={15}
     height={350}
-    tolarance={150}
+    tolerance={150}
     loadMore={loadMore}
     setData={setData}
 >
-{data.map(item => <span>{item}<span>}
+{data.map(item => <span>{item}<span>)}
 </InfiniteScroll>
 
 ```
@@ -34,7 +34,7 @@ import InfiniteScroll, { useInfiniteScroll } from "rinfinite-scroll"
 page | number *| current page state |
 setPage | function* | set state function for page |
 pageCount | number* | total page count |
-tolarance | number | component's scroll bottom tolarance |
+tolerance | number | component's scroll bottom tolerance |
 height | number* | component's height |
 loadMore | function* |  (page: number, search?: string) => {} load new page's data when page change |
 styles | object | component's custom style object |
@@ -48,9 +48,12 @@ It takes a single argument as object
 
 ```js
   const { data, setData, page, setPage, search, setSearch, loadMore } = useInfiniteScroll({
-    loadMore: async (loadingPage) => await fetch(
-      `https://jsonplaceholder.typicode.com/posts?_page=${loadingPage}&_limit=10&title_like=${search}`
+    loadMore: async (currentPage) => {
+      const res = await fetch(
+      `https://jsonplaceholder.typicode.com/posts?_page=${currentPage}&_limit=10&title_like=${search}`
     )
+      return res.json()
+    }
   })
 ```
 
@@ -85,7 +88,7 @@ const ExampleComponent = () => {
         setPage={setPage}
         pageCount={15}
         height={350}
-        tolarance={150}
+        tolerance={150}
         loadMore={loadMore}
         setData={setData}
       >
