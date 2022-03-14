@@ -70,10 +70,13 @@ loadMore | function* | load more data current page when page change or search st
 import InfiniteScroll, { useInfiniteScroll } from "rinfinite-scroll"
 
 const ExampleComponent = () => {
-      const { data, setData, page, setPage, search, setSearch, loadMore } = useInfiniteScroll({
-    loadMore: async (loadingPage) => await fetch(
-      `https://jsonplaceholder.typicode.com/posts?_page=${loadingPage}&_limit=10&title_like=${search}`
+    const { data, setData, page, setPage, search, setSearch, loadMore } = useInfiniteScroll({
+    loadMore: async (currentPage) => {
+      const res = await fetch(
+      `https://jsonplaceholder.typicode.com/posts?_page=${currentPage}&_limit=10&title_like=${search}`
     )
+      return res.json()
+    }
   })
 
   return(
