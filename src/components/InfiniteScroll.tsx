@@ -4,7 +4,7 @@ interface InfiniteScrollProps {
   page: number;
   setPage: Dispatch<SetStateAction<number>>;
   pageCount: number;
-  tolarance?: number;
+  tolerance?: number;
   height: number;
   children: ReactNode;
   loadMore: (page: number, search?: string) => {};
@@ -17,7 +17,7 @@ function InfiniteScroll({
   page,
   setPage,
   pageCount,
-  tolarance = 25,
+  tolerance = 25,
   height,
   children,
   loadMore,
@@ -51,7 +51,7 @@ function InfiniteScroll({
 
       if (
         element.clientHeight + element.scrollTop >
-        element.scrollHeight - tolarance &&
+        element.scrollHeight - tolerance &&
         page < pageCount &&
         !lock
       ) {
