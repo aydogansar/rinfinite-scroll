@@ -105,5 +105,7 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
-  }
+    
+  },
+  "exclude": ["test"]
 }
