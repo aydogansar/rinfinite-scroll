@@ -1,7 +1,7 @@
 {
   "name": "rinfinite-scroll",
   "version": "2.0.1",
-  "description": "Reach hooks for infinite scroll",
+  "description": "React hooks for infinite scroll",
   "keywords": [
     "infinite",
     "scroll",
@@ -41,7 +41,9 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "types": "dist/index.d.ts"
 }
