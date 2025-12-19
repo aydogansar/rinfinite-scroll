@@ -1,6 +1,6 @@
 {
   "name": "rinfinite-scroll",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "React hooks for infinite scroll",
   "keywords": [
     "infinite",
