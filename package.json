@@ -1,7 +1,14 @@
 {
   "name": "rinfinite-scroll",
   "version": "2.0.0",
-  "description": "React component that enables search with infinite scroll",
+  "description": "Reach hooks for infinite scroll",
+  "keywords": [
+    "infinite",
+    "scroll",
+    "infinite-scroll",
+    "pagination",
+    "react"
+  ],
   "scripts": {
     "rollup": "rollup -c"
   },
